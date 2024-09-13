@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5c6d0;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            background: linear-gradient(135deg, #009688, #3f51b5);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"],
+        .login-container input[type="submit"],
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 20px;
+            background: #e0e0e0;
+        }
+        .login-container input[type="submit"],
+        .login-container button {
+            background: #42a5f5;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .login-container input[type="submit"]:hover,
+        .login-container button:hover {
+            background: #1e88e5;
+        }
+        .login-container button {
+            background: #f44336;
+        }
+        .login-container button:hover {
+            background: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Registration Form</h2>
+        <form onsubmit="return validateForm()"method="post"action="http://localhost:7777/update" >
+            <input type="text" id="username" placeholder="Name"name="name" required>
+            <input type="text" id="username" placeholder="Id Number"name="rn" required>
+           
+            <label for="role" style="color:white;">Updated Role</label>
+            <input type="text" id="role" placeholder="Enter role" maxlength="100"name="deptname" required>
+            <input type="submit" value="update" onclick="saveDetails()">
+            <button type="button" onclick="cancelAction()">Cancel</button>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var role = document.getElementById("role").value;
+            
+            if (username === "" || password === "" || role === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            // If validation passes
+            return true;
+        }
+
+        function saveDetails() {
+            if (validateForm()) {
+                alert("Details saved!");
+            }
+        }
+
+        function cancelAction() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #4caf4fb5;
+            color: white;
+            padding: 1.5rem;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            height: 2rem; /* Adjusted height */
+        }
+        main{
+            margin-top:2rem;
+        }
+        .sidebar {
+            background-color: #333;
+            color: white;
+            width: 250px;
+            text-align: center;
+            height: 100vh;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            
+        }
+        .sidebar a {
+            
+            display: flex;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        section {
+            display: flex;
+            width: 100%;
+            padding-top: 5rem !important;
+        }
+        .main-content {
+            background-color: #f1f1f1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <i class="fas fa-bars custom-size"></i> 
+        <div class="h1">
+            <h1>Dashboard</h1>
+        </div>
+    </div>
+    <main>
+        <section>
+            <div class="sidebar">
+                <a href="mdbcr">Insert</a>
+                <a href="mdbup">Update</a>
+                <a href="mdbre">Search</a>
+                <a href="mdbde">Delete</a>
+            </div>
+            <div class="main-content">
+                <div class="card" id="section1">
+                    <h2>Section 1</h2>
+                    <p>This is section 1 content.</p>
+                </div>
+                <div class="card" id="section2">
+                    <h2>Section 2</h2>
+                    <p>This is section 2 content.</p>
+                </div>
+                <div class="card" id="section3">
+                    <h2>Section 3</h2>
+                    <p>This is section 3 content.</p>
+                </div>
+                <div class="card" id="section4">
+                    <h2>Section 4</h2>
+                    <p>This is section 4 content.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

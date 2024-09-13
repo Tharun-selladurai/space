@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Record</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5c6d0;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            background: linear-gradient(135deg, #009688, #3f51b5);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 20px;
+            background: #e0e0e0;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background: #42a5f5;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .login-container input[type="submit"]:hover {
+            background: #1e88e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Delete Record</h2>
+        <form onsubmit="return validateForm()" method="post" action="http://localhost:7777/delete">
+            <input type="text" id="idnumber" placeholder="Enter the ID number" name="rn" required>
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var idnumber = document.getElementById("idnumber").value;
+            
+            if (idnumber === "") {
+                alert("ID number must be filled out");
+                return false;
+            }
+           
+            return true; // Allow form submission if validation passes
+        }
+    </script>
+</body>
+</html>
